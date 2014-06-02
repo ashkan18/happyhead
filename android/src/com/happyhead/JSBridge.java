@@ -19,8 +19,7 @@ public class JSBridge {
 
     @JavascriptInterface
     public void showMessageAndTakePhoto(final String user, final String pass, final String rm) {
-
-
+        ((MessagePictureActivity)this.mContext).takePicture();
     }
 
 }
