@@ -10,10 +10,9 @@ package com.happyhead.photo;
 
 import android.content.Context;
 import android.hardware.Camera;
+import android.os.Build;
 import android.util.Log;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
-import android.view.ViewGroup;
+import android.view.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -26,10 +25,12 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
     private Camera mCamera;
     private List<Camera.Size> mSupportedPreviewSizes;
     private Camera.Size mPreviewSize;
+    private Context mContext;
 
     public CameraPreview(Context context, Camera camera) {
         super(context);
 
+        this.mContext = context;
         setCamera(camera);
         // Install a SurfaceHolder.Callback so we get notified when the
         // underlying surface is created and destroyed.
@@ -79,11 +80,28 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         try {
             mCamera.setPreviewDisplay(mHolder);
             mCamera.startPreview();
+            setCameraDisplayOrientation();
 
         } catch (Exception e){
             Log.d(TAG, "Error starting camera preview: " + e.getMessage());
         }
     }
+
+    public void setCameraDisplayOrientation()
+    {
+
+        if (mCamera == null)
+        {
+            Log.d(TAG,"setCameraDisplayOrientation - camera null");
+            return;
+        }
+
+
+        if (Build.VERSION.SDK_INT >= 8)
+            mCamera.setDisplayOrientation(90);
+
+    }
+
 
     public void setCamera(Camera camera) {
         if (mCamera == camera) { return; }

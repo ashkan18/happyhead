@@ -6,7 +6,7 @@
         >
     <FrameLayout
             android:layout_width="fill_parent"
-            android:layout_height="172dp"
+            android:layout_height="199dp"
             android:id="@+id/camera_preview"/>
     <WebView
             android:layout_width="fill_parent"
