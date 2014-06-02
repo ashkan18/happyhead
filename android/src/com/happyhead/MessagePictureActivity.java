@@ -9,7 +9,9 @@ import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 import com.happyhead.photo.CameraPreview;
@@ -46,8 +48,19 @@ public class MessagePictureActivity extends Activity {
         preview.addView(mPreview);
 
         WebView messageView = (WebView) findViewById(R.id.messages_webview);
-        messageView.addJavascriptInterface(new JSBridge(this), "platform");
+        WebSettings webSettings = messageView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        // inject our js bridge into the webview, so webview can male call to native wrapper
+        messageView.addJavascriptInterface(new JSBridge(this), "Platform");
         messageView.loadUrl(messageAppUrl);
+
+        messageView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+                return true;
+            }
+        });
 
 
     }
