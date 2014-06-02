@@ -2,7 +2,7 @@ package com.happyhead.photo;
 
 /**
  * Created with IntelliJ IDEA.
- * User: root
+ * User: Ashkan
  * Date: 6/2/14
  * Time: 11:17 AM
  * To change this template use File | Settings | File Templates.
@@ -36,7 +36,6 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         // underlying surface is created and destroyed.
         mHolder = getHolder();
         mHolder.addCallback(this);
-        mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
     }
 
     public void surfaceCreated(SurfaceHolder holder) {
@@ -103,6 +102,10 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
     }
 
 
+    /**
+     * This method will set the camera for this surface view,
+     * @param camera
+     */
     public void setCamera(Camera camera) {
         if (mCamera == camera) { return; }
 
