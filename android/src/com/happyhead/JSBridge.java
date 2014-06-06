@@ -21,10 +21,10 @@ public class JSBridge {
     }
 
     @JavascriptInterface
-    public void showMessageAndTakePhoto() {
+    public void showMessageAndTakePhoto(int id) {
         Toast.makeText(mContext, "Hello yaroo", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "Received show message and take photo call from webview");
-        ((MessagePictureActivity)this.mContext).takePicture();
+        ((MessagePictureActivity)this.mContext).showMessage(id);
     }
 
 }

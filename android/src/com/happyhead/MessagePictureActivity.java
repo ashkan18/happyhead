@@ -1,6 +1,7 @@
 package com.happyhead;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.os.Bundle;
@@ -21,7 +22,7 @@ public class MessagePictureActivity extends Activity {
     private Camera mCamera;
     private CameraPreview mPreview;
 
-/**
+    /**
      * Called when the activity is first created.
      */
     @Override
@@ -33,24 +34,9 @@ public class MessagePictureActivity extends Activity {
         AppConfig appConfig = new AppConfig(this);
         String messageAppUrl = appConfig.getConfig("url");
 
-        // check if device has camera or not
-        if (checkCameraHardware()) {
-            int fronCameraId = findFrontFacingCamera();
-            // Create an instance of Camera
-            mCamera = getCameraInstance(fronCameraId);
-        } else {
-            Toast.makeText(this, R.string.missing_camera_toast, 5);
-            Log.e(DEBUG_TAG, "No access to the camera");
-        }
-
-        // Create our Preview view and set it as the content of our activity.
-        // this view will show what we see from the camera
-        mPreview = new CameraPreview(this, mCamera);
-        FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
-        preview.addView(mPreview);
 
         // now handle creating the webview, the webview is used to show the messages
-        WebView messageView = (WebView) findViewById(R.id.messages_webview);
+        WebView messageView = (WebView) findViewById(R.id.my_messages);
         WebSettings webSettings = messageView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         // inject our js bridge into the webview, so webview can male call to native wrapper
@@ -65,70 +51,12 @@ public class MessagePictureActivity extends Activity {
             }
         });
     }
-    public void takePicture() {
-        mCamera.takePicture(null, null,
-                new PhotoHandler(getApplicationContext()));
 
+    public void showMessage(int message_id) {
+        // go to message activity and pass the message id
+        Intent intent = new Intent(this, MessageActivity.class);
+        intent.putExtra("id", message_id);
+        startActivity(intent);
     }
-
-    private void releaseCameraAndPreview() {
-        mPreview.setCamera(null);
-        if (mCamera != null) {
-            mCamera.release();
-            mCamera = null;
-        }
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-
-        this.releaseCameraAndPreview();
-    }
-
-    /** A safe way to get an instance of the Camera object. */
-    public Camera getCameraInstance(int cameraId){
-        Camera c = null;
-        try {
-            c = Camera.open(cameraId); // attempt to get a Camera instance
-        }
-        catch (Exception e){
-            // Camera is not available (in use or does not exist)
-            Log.e(DEBUG_TAG, "Can't open camera", e);
-        }
-        return c; // returns null if camera is unavailable
-    }
-
-    /** Check if this device has a camera */
-    private boolean checkCameraHardware() {
-        if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)){
-            // this device has a camera
-            return true;
-        } else {
-            // no camera on this device
-            return false;
-        }
-    }
-
-    /**
-     * This method will find the camera Id of the front camera
-     * @return int id of the front camera
-     */
-    private int findFrontFacingCamera() {
-        int cameraId = -1;
-        // Search for the front facing camera
-        int numberOfCameras = Camera.getNumberOfCameras();
-        for (int i = 0; i < numberOfCameras; i++) {
-            Camera.CameraInfo info = new Camera.CameraInfo();
-            Camera.getCameraInfo(i, info);
-            if (info.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
-                Log.d(DEBUG_TAG, "Camera found");
-                cameraId = i;
-                break;
-            }
-        }
-        return cameraId;
-    }
-
 
 }
