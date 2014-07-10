@@ -17,7 +17,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    NSString *fullURL = @"http://reacto.herokuapp.com/app/index.html";
+    NSURL *url = [NSURL URLWithString:fullURL];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [_reactoWebView loadRequest:requestObj];
 }
 
 - (void)didReceiveMemoryWarning

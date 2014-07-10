@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ReactoViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIWebView *reactoWebView;
 
 @end
