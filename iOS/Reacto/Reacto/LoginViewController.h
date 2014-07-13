@@ -2,15 +2,14 @@
 //  ReactoViewController.h
 //  Reacto
 //
-//  Created by Ashkan Nasseri on 7/11/14.
+//  Created by Ashkan Nasseri on 7/2/14.
 //  Copyright (c) 2014 Reacto. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import <FacebookSDK/FacebookSDK.h>
 
-@interface ReactoViewController : UIViewController
+@interface LoginViewController : UIViewController <FBLoginViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *reactoWebView;
-@property(nonatomic) NSString *userId;
-@property(nonatomic) NSString *userName;
 
 @end

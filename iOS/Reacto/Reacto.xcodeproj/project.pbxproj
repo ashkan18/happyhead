@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4158B3A81970677F004C3352 /* ReactoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4158B3A61970677F004C3352 /* ReactoViewController.m */; };
 		41832F941964557D00537D3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41832F931964557D00537D3B /* Foundation.framework */; };
 		41832F961964557D00537D3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41832F951964557D00537D3B /* CoreGraphics.framework */; };
 		41832F981964557D00537D3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41832F971964557D00537D3B /* UIKit.framework */; };
@@ -15,13 +16,14 @@
 		41832FA41964557D00537D3B /* ReactoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41832FA31964557D00537D3B /* ReactoAppDelegate.m */; };
 		41832FA71964557D00537D3B /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41832FA51964557D00537D3B /* Main_iPhone.storyboard */; };
 		41832FAA1964557D00537D3B /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41832FA81964557D00537D3B /* Main_iPad.storyboard */; };
-		41832FAD1964557D00537D3B /* ReactoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41832FAC1964557D00537D3B /* ReactoViewController.m */; };
+		41832FAD1964557D00537D3B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41832FAC1964557D00537D3B /* LoginViewController.m */; };
 		41832FAF1964557D00537D3B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41832FAE1964557D00537D3B /* Images.xcassets */; };
 		41832FB61964557D00537D3B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41832FB51964557D00537D3B /* XCTest.framework */; };
 		41832FB71964557D00537D3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41832F931964557D00537D3B /* Foundation.framework */; };
 		41832FB81964557D00537D3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41832F971964557D00537D3B /* UIKit.framework */; };
 		41832FC01964557D00537D3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41832FBE1964557D00537D3B /* InfoPlist.strings */; };
 		41832FC21964557D00537D3B /* ReactoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41832FC11964557D00537D3B /* ReactoTests.m */; };
+		418ED3BF197033FD001A9EB1 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418ED3BE197033FD001A9EB1 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4158B3A51970677F004C3352 /* ReactoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactoViewController.h; sourceTree = "<group>"; };
+		4158B3A61970677F004C3352 /* ReactoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReactoViewController.m; sourceTree = "<group>"; };
 		41832F901964557D00537D3B /* Reacto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reacto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41832F931964557D00537D3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		41832F951964557D00537D3B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -47,14 +51,15 @@
 		41832FA31964557D00537D3B /* ReactoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactoAppDelegate.m; sourceTree = "<group>"; };
 		41832FA61964557D00537D3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		41832FA91964557D00537D3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		41832FAB1964557D00537D3B /* ReactoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactoViewController.h; sourceTree = "<group>"; };
-		41832FAC1964557D00537D3B /* ReactoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactoViewController.m; sourceTree = "<group>"; };
+		41832FAB1964557D00537D3B /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		41832FAC1964557D00537D3B /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		41832FAE1964557D00537D3B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		41832FB41964557D00537D3B /* ReactoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41832FB51964557D00537D3B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		41832FBD1964557D00537D3B /* ReactoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ReactoTests-Info.plist"; sourceTree = "<group>"; };
 		41832FBF1964557D00537D3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		41832FC11964557D00537D3B /* ReactoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactoTests.m; sourceTree = "<group>"; };
+		418ED3BE197033FD001A9EB1 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41832F961964557D00537D3B /* CoreGraphics.framework in Frameworks */,
+				418ED3BF197033FD001A9EB1 /* FacebookSDK.framework in Frameworks */,
 				41832F981964557D00537D3B /* UIKit.framework in Frameworks */,
 				41832F941964557D00537D3B /* Foundation.framework in Frameworks */,
 			);
@@ -103,6 +109,7 @@
 		41832F921964557D00537D3B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				418ED3BE197033FD001A9EB1 /* FacebookSDK.framework */,
 				41832F931964557D00537D3B /* Foundation.framework */,
 				41832F951964557D00537D3B /* CoreGraphics.framework */,
 				41832F971964557D00537D3B /* UIKit.framework */,
@@ -118,10 +125,12 @@
 				41832FA31964557D00537D3B /* ReactoAppDelegate.m */,
 				41832FA51964557D00537D3B /* Main_iPhone.storyboard */,
 				41832FA81964557D00537D3B /* Main_iPad.storyboard */,
-				41832FAB1964557D00537D3B /* ReactoViewController.h */,
-				41832FAC1964557D00537D3B /* ReactoViewController.m */,
+				41832FAB1964557D00537D3B /* LoginViewController.h */,
+				41832FAC1964557D00537D3B /* LoginViewController.m */,
 				41832FAE1964557D00537D3B /* Images.xcassets */,
 				41832F9A1964557D00537D3B /* Supporting Files */,
+				4158B3A51970677F004C3352 /* ReactoViewController.h */,
+				4158B3A61970677F004C3352 /* ReactoViewController.m */,
 			);
 			path = Reacto;
 			sourceTree = "<group>";
@@ -254,8 +263,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41832FAD1964557D00537D3B /* ReactoViewController.m in Sources */,
+				41832FAD1964557D00537D3B /* LoginViewController.m in Sources */,
 				41832FA41964557D00537D3B /* ReactoAppDelegate.m in Sources */,
+				4158B3A81970677F004C3352 /* ReactoViewController.m in Sources */,
 				41832FA01964557D00537D3B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +401,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ashkan/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Reacto/Reacto-Prefix.pch";
 				INFOPLIST_FILE = "Reacto/Reacto-Info.plist";
@@ -404,6 +418,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ashkan/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Reacto/Reacto-Prefix.pch";
 				INFOPLIST_FILE = "Reacto/Reacto-Info.plist";
@@ -471,6 +489,7 @@
 				41832FC71964557D00537D3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		41832FC81964557D00537D3B /* Build configuration list for PBXNativeTarget "ReactoTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +498,7 @@
 				41832FCA1964557D00537D3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
